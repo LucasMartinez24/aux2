@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Registro de Preguntas</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="#"> Registro de Usuarios</a>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/listarusuarios}">Control
+						de Usuarios</a></li>
+			</ul>
+		</div>
+	</nav>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+    <div class="container">
+        <header>
+            <div>
+            <br>
+            <h1 >Cuestionario de Java y Springboot Framework</h1>
+
+             <!-- h1 style="color: darkseagreen;"> Framework !-->
+             
+            <br>
+            </div>
+        </header>
+        </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+    <div class="container">
+        <br>
+        <h1>Nivel Avanzando</h1>
+        <br>
+        <section id="p0">
+            <h3>1 -¿Qué es una clase Abstracta?</h3>
+            <label>
+                <input type="radio" value="1" name="p0"> Una clase abstracta es aquella de la que no se pueden declarar instancias.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p0"> Una clase abstracta es aquella de la que no se pueden declarar variables.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p0"> Una clase abstracta es aquella de la que no se pueden declarar constantes.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p0"> Ninguna de las anteriores.
+            </label>
+        </section>
+        <br>
+        <section id="p1">
+            <h3>2 -¿Cuáles son los tipos de excepciones?</h3>
+            <label>
+                <input type="radio" value="1" name="p1"> Checked Exception y UnChecked Exception
+            </label>
+            <label>
+                <input type="radio" value="2" name="p1"> Checked Exception y Special Checked Exception
+            </label>
+            <label>
+                <input type="radio" value="3" name="p1"> Checked Exception y Unique Checked Exception.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p1"> Checked Exception, UnChecked Exception y Special Checked Exception.
+            </label>
+        </section>
+        <br>
+        <section id="p2">
+            <h3>3 -¿Que hacen el Try y el catch?</h3>
+            <label>
+                <input type="radio" value="1" name="p2">Si ocurre una excepción, entonces es atrapado por el bloque catch que es seguido por el bloque try
+            </label>
+            <label>
+                <input type="radio" value="2" name="p2"> Si ocurre una excepción, entonces es atrapado por el bloque try que es seguido por el bloque catch
+            </label>
+            <label>
+                <input type="radio" value="3" name="p2"> Ningun de las anteriores.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p2"> El Try y el cath no existe en Java.
+            </label>
+        </section>
+        <br>
+        <section id="p3">
+            <h3>4 -¿Qué son los starters y cuál es su objetivo ?</h3>
+            <label>
+                <input type="radio" value="1" name="p3"> 
+                Un starter es una utilidad que facilita la creación y configuración de aplicaciones.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p3"> Agregan dependencias necesarias para un objetivo y parámetros de configuración.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p3"> Ambas son Correctas
+            </label>
+            <label>
+                <input type="radio" value="4" name="p3"> Ninguna es Correcta.
+            </label>
+        </section>
+        <br>
+        <section id="p4">
+            <h3>5 -¿Cuál es la función de la anotación de atributos del modelo?</h3>
+            <label>
+                <input type="radio" value="1" name="p4"> Es responsable del parámetro del método de vinculación con el atributo del modelo respectivo y 
+                luego lo muestra en la página de presentación.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p4"> Es responsable del parámetro del método de vinculación con el atributo del modelo respectivo 
+                pero no lo muestra en la página de presentación.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p4"> No es responsable del parámetro del método de vinculación con el atributo del modelo respectivo 
+                pero lo muestra en la página de presentación.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p4"> Es responsable del parámetro del método de vinculación con el atributo del modelo respectivo.
+            </label>
+        </section>
+        <br>
+        <section id="p5">
+            <h3>6 -¿Es @PathVariable una anotacion o una clase abstracta?</h3>
+            <label>
+                <input type="radio" value="1" name="p5"> @PathVariable es una anotación que se utiliza como parámetro en el método del controlador 
+                para extraer el valor de la plantilla URI.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p5"> @PathVariable no es una anotacion ni una clase abstracta.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p5"> @PathVariable es una clase del tipo abstracta que se utiliza como parámetro en el método del controlador 
+                para extraer el valor de la plantilla URI.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p5"> @PathVariable es una anotacion y una clase abstracta que se utiliza como parámetro en el método del controlador 
+                para extraer el valor de la plantilla URI.
+            </label>
+        </section>
+        <br>
+    </div>
+		    <input type="hidden">
+		    <div class="box-footer">
+		    <button class="btn btn-primary">Terminar Cuestionario</button>
+        </div>
+        <br>
+
+</div>
+</div>
+</body>
+</html>

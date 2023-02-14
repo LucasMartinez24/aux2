@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Listado de estudiantes</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="#"> Control de Usuarios</a>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/listarusuarios}">Registrar nuevo Usuario</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/preguntas/nuevo}">Crear nueva pregunta</a></li>
+				<li class="nav-item"><a class="nav-link" th:href="@{/tablaPreguntas}">Tabla preguntas</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<div class="container" >
+		<div class="row">
+		</div>
+		<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th scope="col">Nivel 1</th>
+					<th scope="col">Enunciado</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="pregunta : ${preguntas1}">
+					<td th:text="${pregunta.Nivel}"></td>
+					<td th:text="${pregunta.Enunciado}"></td>
+					<td>
+						<a th:href="@{/preguntas/editar/{id}(id=${pregunta.CodPregunta})}" class="btn btn-info">Editar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="table table-striped table-dark">
+			<thead>
+				<tr>
+					<th scope="col">Nivel 2</th>
+					<th scope="col">Pregunta</th>
+					<th scope="col">Botones</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="pregunta : ${preguntas2}">
+					<td th:text="${pregunta.Nivel}"></td>
+					<td th:text="${pregunta.Enunciado}"></td>
+					<td>
+						<a th:href="@{/preguntas/editar/{id}(id=${pregunta.CodPregunta})}" class="btn btn-info">Editar</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</body>
+</html>

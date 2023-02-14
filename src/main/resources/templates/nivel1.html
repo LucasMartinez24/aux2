@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Registro de Preguntas</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="#"> Registro de Usuarios</a>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/listarusuarios}">Control
+						de Usuarios</a></li>
+			</ul>
+		</div>
+	</nav>
+    
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+    <div class="container">
+        <header>
+            <div>
+            <br>
+            <h1 >Cuestionario de Java y Springboot Framework</h1>
+
+             <!-- h1 style="color: darkseagreen;"> Framework !-->
+
+            <br>
+            </div>
+        </header>
+        </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+    <div class="container">
+        <br>
+        <h1>Nivel Inicial</h1>
+        <br>
+        <section id="p0">
+            <h3>1 -¿Qué es la programación orientada a objetos?</h3>
+            <label>
+                <input type="radio" value="1" name="p0"> La Programación Orientada a Objetos
+                es un modelo de programación que trabaja con los conceptos de clases y objetos.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p0"> La Programación Orientada a Objetos
+                es un modelo de programación que trabaja solo con el concepto de objetos.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p0"> La programacion Orientada a Objetos es un paradigma de programación de software
+                en el que no se detallan los pasos a seguir,
+                sino solo el resultado deseado con cierto código fuente.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p0"> La programacion Orientada a Objetos es un paradigma de programación de software
+                en el que no se detallan los pasos a seguir,
+                sino solo el resultado deseado con cierto código fuente.
+            </label>
+        </section>
+        <br>
+        <section id="p1">
+            <h3>2 -¿Qué es un objeto?</h3>
+            <label>
+                <input type="radio" value="1" name="p1"> Se define como una instancia de una clase.
+                 Puede tener un estado y un comportamiento. Se crea con “new ()”.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p1"> Es  un elemento de datos con nombre cuyo valor 
+                puede cambiar durante el curso de la ejecución de un programa.
+            </label>
+            <label>
+                <input type="radio" value="3" name="p1"> Es un número, un carácter o una cadena de caracteres que se puede utilizar como valor en un programa.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p1"> Es un número, un carácter o una cadena de caracteres que se puede utilizar como valor en un programa.
+            </label>
+        </section>
+        <br>
+        <section id="p2">
+            <h3>3 -¿Que es una clase en programación?</h3>
+            <label>
+                <input type="radio" value="1" name="p2"> Dentro de una clase se definen los datos y el código que actúa en ellos, por lo tanto,
+                 al definir la naturaleza de un objeto, las clases con la base sobre la cual se construyen 
+                 y definen los elementos para crear todo el programa.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p2"> Es un conjunto de acciones que se van a ejecutar, las cuales pueden ser invocadas con algún nombre
+            </label>
+            <label>
+                <input type="radio" value="3" name="p2"> Un conjunto de varios archivos escritos que proporcionan diversas funcionalidades.
+            </label>
+            <label>
+                <input type="radio" value="4" name="p2"> Un conjunto de varios archivos escritos que proporcionan diversas funcionalidades.
+            </label>
+        </section>
+        <br>
+        <section id="p3">
+            <h3>4-¿Que es Springboot?</h3>
+            <label>
+                <input type="radio" value="1" name="p3"> 
+                Un Framework
+            </label>
+            <label>
+                <input type="radio" value="2" name="p3"> Un entorno o marco de trabajo, un conjunto de prácticas, conceptos y criterios a seguir estandarizados, que nos ayuda a 
+                utilizar buenas prácticas para nuestro código
+            </label>
+            <label>
+                <input type="radio" value="3" name="p3"> Ambas son Correctas
+            </label>
+            <label>
+                <input type="radio" value="4" name="p3"> Ambas son Correctas
+            </label>
+        </section>
+        <br>
+        <section id="p4">
+            <h3>5 -¿Qué es la herencia segun los 4 fundamentos de la POO?</h3>
+            <label>
+                <input type="radio" value="1" name="p4"> La herencia indica que una clase puede extenderse a otra,
+                 de manera que el código puede ser reutilizado en la siguiente clase.
+                  La clase que extiende su código se conoce como superclase;
+                   la clase que hereda el código para reutilizarlo se denomina subclase.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p4"> Todos los bienes, derechos y obligaciones de la persona fallecida, a la que se llama "causante".
+            </label>
+            <label>
+                <input type="radio" value="3" name="p4"> El proceso en el cual un padre le transmite ciertos genes a sus hijos
+            </label>
+            <label>
+                <input type="radio" value="4" name="p4"> El proceso en el cual un padre le transmite ciertos genes a sus hijos
+            </label>
+        </section>
+        <br>
+        <section id="p5">
+            <h3>6 -¿Que es el encapsulamiento segun los 4 fundamentos de la POO?</h3>
+            <label>
+                <input type="radio" value="1" name="p5"> Es mantener la seguridad del código, protegiendo a los objetos y ocultando sus atributos.
+            </label>
+            <label>
+                <input type="radio" value="2" name="p5"> El proceso de colocar un pequeño ingrediente, sólido o líquido, en una cubierta o recubrimiento
+            </label>
+            <label>
+                <input type="radio" value="3" name="p5"> La cualidad por la que un objeto adquiere o puede tener diferentes formas
+            </label>
+            <label>
+                <input type="radio" value="4" name="p5"> La cualidad por la que un objeto adquiere o puede tener diferentes formas
+            </label>
+        </section>
+        <br>
+    </div>
+		    <input type="hidden">
+		    <div class="box-footer">
+		    <button class="btn btn-primary">Terminar Cuestionario</button>
+        </div>
+        <br>
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Registro de Preguntas</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="#"> Registro de Usuarios</a>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/listarusuarios}">Puntaje</a></li>
+			</ul>
+		</div>
+	</nav>
+    
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+    <div class="container">
+        <header>
+            <div>
+            <br>
+            <h1 >Cuestionario de Java y Springboot Framework</h1>
+             <!-- h1 style="color: darkseagreen;"> Framework !-->
+            <br>
+            </div>
+        </header>
+        </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+    <div class="container" th:object="${pregunta}">
+        <br>
+        <h1>Nivel Inicial</h1>
+        <br>
+        <form th:action="@{/subirpuntaje/{nv}(nv=${nro}+1)}" th:object="${puntaje}" method="POST">
+            <input type="hidden" th:field="*{Nivel}">
+            <input type="hidden" th:field="*{Usuario}">
+            <input type="hidden" th:field="*{Pregunta}">
+            <br>
+            <h3 th:text="${pregunta.Enunciado}"></h3>
+            <label>
+                <input th:field="*{PuntajeTotal}" type="radio" value="0" th:text="${pregunta.Opcion01}" >
+            </label>
+            <br>
+            <label>
+                <input th:field="*{PuntajeTotal}" type="radio" value="0" name="p0" th:text="${pregunta.Opcion02}">
+            </label>
+            <br>
+            <label>
+                <input th:field="*{PuntajeTotal}" type="radio" th:value="${pregunta.Puntaje}" name="p0" th:text="${pregunta.OpcionCorrecta}"> 
+            </label>
+            <br>
+            <label>
+                <input th:field="*{PuntajeTotal}" type="radio" value="0" name="p0" th:text="${pregunta.Opcion03}">
+            </label>
+            <br>
+                <div class="box-footer" >
+                    <button class="btn btn-primary">Siguiente pregunta</button>
+                </div>
+            </form>
+        <br>
+</div>
+</div>
+</body>
+</html>

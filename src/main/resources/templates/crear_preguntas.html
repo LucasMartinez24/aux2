@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Registro de Preguntas</title>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+	crossorigin="anonymous">
+</head>
+<body>
+
+
+	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+		<a class="navbar-brand" href="#"> Registro de Preguntas</a>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link" th:href="@{/usuarios}">Control
+						de Preguntas</a></li>
+			</ul>
+		</div>
+	</nav>
+	<br>
+	<div class="container">
+		<div class="row">
+			<div
+				class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+
+				<h1 class="text-center">Registro de Preguntas</h1>
+				<div class="card-body">
+					<form th:action="@{/preguntas/nuevo}" th:object="${pregunta}" method="POST">
+					<br>	
+					<input type="hidden" th:field="*{CodPregunta}">
+						<div class="form-group">
+							<label>Enunciado : </label> <input type="text" th:field="*{Enunciado}" class="form-control" placeholder="Ingrese el enunciado">
+					</div>
+						<br>
+						<div class="form-group">
+							<label>Nivel : </label> <input type="number"  th:field="*{Nivel}" class="form-control" placeholder="Ingrese el Nivel">
+						</div>
+						<br>
+						<div class="form-group">
+							<label>Opcion 1 : </label> <input type="text"  th:field="*{Opcion01}" class="form-control" placeholder="Ingrese la opcion 1">
+						</div>
+						<br>
+						<div class="form-group">
+							<label>Opcion 2 : </label> <input type="text"  th:field="*{Opcion02}" class="form-control" placeholder="Ingrese la opcion 2">
+						</div>
+						<br>
+						<div class="form-group">
+							<label>Opcion 3 : </label> <input type="text"  th:field="*{Opcion03}" class="form-control" placeholder="Ingrese la opcion 3">
+						</div>
+						<br>
+						<div class="form-group">
+							<label>Opcion Correcta : </label> <input type="text"  th:field="*{OpcionCorrecta}" class="form-control" placeholder="Ingrese la opcion Correcta">
+						</div>
+						<br>
+						<div class="form-group">
+							<label>Puntaje : </label> <input type="number"  th:field="*{Puntaje}" class="form-control" placeholder="Ingrese el puntaje">
+						</div>
+						<br>
+						<div class="box-footer">
+							<button type="submit" class="btn btn-primary">Guardar</button>
+						</div>
+					</form>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
