@@ -86,4 +86,13 @@ public class UsuarioControlador {
 		modelo.addAttribute("puntaje", usuarioPreguntaServicio.SumarPuntaje(usuarioPreguntaServicio.buscarPorIdUsuario(Long.parseLong(userDetail.getUsername()), 1)));
 		return "resultados"; 
 	}
+	@GetMapping("/vernota2")
+	public String vernota2(Model modelo) {
+		Authentication auth = SecurityContextHolder
+        .getContext()
+        .getAuthentication();
+    UserDetails userDetail = (UserDetails) auth.getPrincipal();
+		modelo.addAttribute("puntaje", usuarioPreguntaServicio.SumarPuntaje(usuarioPreguntaServicio.buscarPorIdUsuario(Long.parseLong(userDetail.getUsername()), 2)));
+		return "resultados"; 
+	}
 }

@@ -97,7 +97,6 @@ public class PreguntasControlador {
 
   @PostMapping("/subirpuntaje/{nv}")
   public String subirnivel(@ModelAttribute("puntaje") UsuarioPregunta puntaje, @PathVariable(name = "nv") Integer id) {
-    System.out.println("xd"+id);
     if(id<=5){
     usuarioPreguntaServicio.guardarPregunta(puntaje);
       return "redirect:/nivel1/{nv}";
@@ -107,11 +106,38 @@ public class PreguntasControlador {
     }
   }
 
-  @GetMapping("/nivel2")
-  public ModelAndView Nivel2() {
-    ModelAndView vista = new ModelAndView("nivel2");
-    vista.addObject("preguntas", preguntaServicio.listarPreguntasPorNivel(2));
+  @GetMapping("/nivel2/{nv}")
+  public ModelAndView Nivel2(@PathVariable(name = "nv") Integer id) {
+    UsuarioPregunta aux = new UsuarioPregunta();
+    Authentication auth = SecurityContextHolder
+        .getContext()
+        .getAuthentication();
+    UserDetails userDetail = (UserDetails) auth.getPrincipal();
+    Usuario userEnSesion = usuarioServicio.obtenerUsuarioporId(Long.parseLong(userDetail.getUsername()));
+    if(id==1){
+      usuarioPreguntaServicio.reinicioPuntaje(userEnSesion.getDni(), 2);
+    }
+    userEnSesion.setPuntajenv2(0);
+    usuarioServicio.actualizarUsuario(userEnSesion);
+    aux.setNivel(2);
+    aux.setUsuario(userEnSesion);
+    aux.setPregunta(preguntaServicio.buscarPregunta(2, id));
+    ModelAndView vista = new ModelAndView("pregunta1");
+    vista.addObject("nro",id);
+    vista.addObject("pregunta", aux.getPregunta());
+    vista.addObject("puntaje", aux);
     return vista;
+  }
+
+  @PostMapping("/subirpuntaje2/{nv}")
+  public String subirnivel2(@ModelAttribute("puntaje") UsuarioPregunta puntaje, @PathVariable(name = "nv") Integer id) {
+    if(id<=5){
+    usuarioPreguntaServicio.guardarPregunta(puntaje);
+      return "redirect:/nivel2/{nv}";
+    }else{
+      usuarioPreguntaServicio.guardarPregunta(puntaje);
+    return "redirect:/vernota2";
+    }
   }
 
 }
