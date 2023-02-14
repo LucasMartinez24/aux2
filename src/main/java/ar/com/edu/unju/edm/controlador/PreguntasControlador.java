@@ -52,7 +52,7 @@ public class PreguntasControlador {
   @GetMapping("/preguntas/editar/{id}")
 	public String editarPregunta(@PathVariable Long id, Model modelo) {
 		modelo.addAttribute("pregunta", preguntaServicio.obtenerPreguntaporId(id));
-		return "editar_usuario"; 
+		return "crear_preguntas"; 
 	}
 
 	@PostMapping("/preguntas/editar/{id}")

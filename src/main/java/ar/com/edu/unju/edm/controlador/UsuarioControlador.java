@@ -102,4 +102,11 @@ public class UsuarioControlador {
 		modelo.addAttribute("puntaje", usuarioPreguntaServicio.SumarPuntaje(usuarioPreguntaServicio.buscarPorIdUsuario(aux.getDni(), 1)));
 		return "resultados_docente"; 
 	}
+	@GetMapping("/vernota2/{id}")
+	public String vernota2docente(Model modelo,@PathVariable Long id) {
+		Usuario aux=new Usuario();
+		aux=servicio.obtenerUsuarioporId(id);
+		modelo.addAttribute("puntaje", usuarioPreguntaServicio.SumarPuntaje(usuarioPreguntaServicio.buscarPorIdUsuario(aux.getDni(), 2)));
+		return "resultados_docente"; 
+	}
 }
