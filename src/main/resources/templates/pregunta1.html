@@ -18,6 +18,7 @@
 				<li class="nav-item"><a class="nav-link" th:href="@{/vernota1}">Puntaje Nivel Basico</a></li>
 				<li class="nav-item"><a class="nav-link" th:href="@{/vernota2}">Puntaje Nivel Avanzado</a></li>
                 <li class="nav-item"><a class="nav-link" th:href="@{/elegirNivel}">elegir nivel</a></li>
+                <li class="nav-item"><a class="nav-link" th:href="@{/login?logout}">Deslogueo</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -43,7 +44,7 @@
         <br>
         <h1>Nivel Inicial</h1>
         <br>
-        <form th:action="@{/subirpuntaje/{nv}(nv=${nro}+1)}" th:object="${puntaje}" method="POST">
+        <form th:action="${nivel}?@{/subirpuntaje/{nv}(nv=${nro}+1)}:@{/subirpuntaje2/{nv}(nv=${nro}+1)}" th:object="${puntaje}" method="POST">
             <input type="hidden" th:field="*{Nivel}">
             <input type="hidden" th:field="*{Usuario}">
             <input type="hidden" th:field="*{Pregunta}">

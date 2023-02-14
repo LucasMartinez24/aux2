@@ -92,6 +92,7 @@ public class PreguntasControlador {
     vista.addObject("nro",id);
     vista.addObject("pregunta", aux.getPregunta());
     vista.addObject("puntaje", aux);
+    vista.addObject("nivel", true);
     return vista;
   }
 
@@ -126,6 +127,7 @@ public class PreguntasControlador {
     vista.addObject("nro",id);
     vista.addObject("pregunta", aux.getPregunta());
     vista.addObject("puntaje", aux);
+    vista.addObject("nivel", false);
     return vista;
   }
 
